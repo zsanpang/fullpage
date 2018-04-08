@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三胖健身</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  	<link rel="shortcut icon"  href="favicon.ico" type="image/x-icon">
+  	<link rel="stylesheet" href="css/jquery.fullPage.css">
+  	<link rel="stylesheet" type="text/css" href="css/common.css" /><!-- 导航栏 -->
+  	<link rel="stylesheet" type="text/css" href="css/index.css" /><!--首页-->
+  	<link rel="stylesheet" href="css/style.css"><!-- 俱乐部 -->
+  	<link rel="stylesheet" href="css/video.css"><!-- 视频 -->
+  	<link rel="stylesheet" href="css/demo.css" /><!-- 第四屏样式 -->
+	<link rel="stylesheet" href="css/component.css" /><!-- 第四屏样式 -->
+	<link href="css/footer.css" rel="stylesheet" type="text/css">
+	
+  	<script src="js/jquery-1.8.3.min.js"></script>
+  	<script src='js/jquery-1.11.1.js'></script>
+  	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+
+  	<script src="https://use.typekit.net/nlq1kdt.js"></script>
+  	<script>try{Typekit.load({ async: true });}catch(e){}</script><!-- 视频 -->
+
+
+
+  	<style type="text/css">
+  	header{background:rgba(0,0,0,0.6);}
+  	header span + span:before{content: ' ';margin: 0 35px;}
+  	#allmap {width: 60%;height: 60%;overflow: hidden;margin:0 auto;font-family:"微软雅黑";}
+  	.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+  	#fp-nav ul li:hover a span {background-color: rgba(245, 245, 245, .4);}
+  	#fp-nav ul li a span{width: 14px;height: 14px;border: 1px solid rgba(245, 245, 245, .4);border-radius: 16px;}
+  	#fp-nav ul li a.active span{background: #f0f0f0;
+    border: 1px solid rgba(245, 245, 245, .4);}
+    #menu .active a { color:#00cbff;}
+    .fp-controlArrow.fp-prev{background:url(images/fp-arrow.png) 50% no-repeat;}
+    .fp-controlArrow.fp-next{background:url(images/fp-arrow.png) 50% no-repeat;transform: rotate(180deg);}
+	.section1 p { position: relative; left: -120%;font-size: 8.5rem;letter-spacing: .08em;font-family: Athelas,"Yu Gothic",YuGothic,sans-serif;}
+
+
+    /*.section1 { background: url(images/29.jpg) 50%;}*/
+	.sections1 { background: url(images/13.jpg) 50%;}
+	.sections2 { background: url(images/14.jpg) 50%;}
+	.sections3 { background: url(images/29.jpg) 50%;}
+	.section3 { background: url(images/34.jpg) 50%;}
+	.section4 { background: url(images/7.jpg) 50%;}
+	.section5 { background: url(images/11.jpg) 50%;}
+	.section6 { background: url(images/4.jpg) 50% no-repeat ;background-size: cover;}
+  	</style>
+  	<script type="text/javascript">
+		$(function(){
+			//第一屏动画
+			$('.section1').find('p').delay(500).animate({left: '0'}, 2000, 'easeOutExpo');
+
+			$('#dowebok').fullpage({
+				'navigation': true,
+				anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],
+				menu: '#menu',
+				// loopBottom: true,
+				afterLoad: function(anchorLink, index){
+					if (index==2) {
+						//轮播文字
+						$(".section2 .sections1 p").delay(200).animate({
+							"top": '40%',
+							"right":"38%"
+							}, 1500,'easeOutExpo');
+						$(".section2 .sections1 span").delay(200).animate({
+							"bottom": '40%',
+							"left":"25%"
+							}, 1500);
+						}
+					if (index==6) {
+						//第六屏  div淡入
+						$(".section6 .contents-block-trial-flow-item").eq(0).delay(200).animate({
+							"left":"10%"
+							}, 4000);
+						$(".section6 .contents-block-trial-flow-item").eq(1).delay(200).animate({
+							"left":"40%"
+							}, 3000);
+						$(".section6 .contents-block-trial-flow-item").eq(2).delay(200).animate({
+							"left":"70%"
+							}, 1500);
+						//第六屏 箭头跟随进入
+						$(".section6 .contents-block-trial-flow-arrow").eq(0).delay(200).animate({
+							"left":"32%"
+							}, 3500);
+						$(".section6 .contents-block-trial-flow-arrow").eq(1).delay(200).animate({
+							"left":"62%"
+							}, 2000);
+						$(".section6 #btns_util").delay(200).animate({
+							"bottom":"45%"
+							}, 4500);
+						}
+					},
+					onLeave: function(index,nextIndex, direction){
+					if (index==2) {
+						$(".section2 .sections1 p").delay(200).animate({
+							"top": '-120%',
+							}, 1500);
+						$(".section2 .sections1 span").delay(300).animate({
+							"bottom": '-120%'
+							}, 1500);
+						}
+					if (index==6) {
+						$(".section6 .contents-block-trial-flow-item").eq(0).delay(200).animate({
+							"left":"-120%"
+							}, 4500);
+						$(".section6 .contents-block-trial-flow-item").eq(1).delay(200).animate({
+							"left":"-120%"
+							}, 3000);
+						$(".section6 .contents-block-trial-flow-item").eq(2).delay(200).animate({
+							"left":"-120%"
+							}, 1500);
+						$(".section6 .contents-block-trial-flow-arrow").eq(0).delay(200).animate({
+							"left":"-120%"
+							}, 3500);
+						$(".section6 .contents-block-trial-flow-arrow").eq(1).delay(200).animate({
+							"left":"-120%"
+							}, 2000);
+						$(".section6 #btns_util").delay(200).animate({
+							"bottom":"-120%"
+							}, 4500);
+						}
+					}	
+				});
+
+
+
+		//第三屏点击下箭头出现内容		
+		$(".btn1").click(function(){
+			$(".box1").css("display","block");
+			$(".box1").animate({
+				"top":"50%"
+			},2000);
+		});
+		
+		$(".el__close-btn").click(function(){
+			$(".box1").animate({
+				"bottom":"-50%"
+			});
+			$(".box1").css("display","none");
+		})
+			//第二屏轮播
+			// setInterval(function(){
+			// 	$.fn.fullpage.moveSlideRight();
+   			// 	}, 6000);
+		});
+	</script>
+</head>
+<body>
+<header>
+    <div class="content">
+      <img src="images/1.png" />
+      <nav id="menu">
+        <span data-menuanchor="page1" class="lock active" ><a href="#page1">首页</a></span>
+        <span data-menuanchor="page2"><a href="#page2">俱乐部</a></span>
+        <span data-menuanchor="page3"><a href="#page3">课程训练</a></span>
+        <span data-menuanchor="page4"><a href="#page4">教练团队</a></span>
+        <span data-menuanchor="page5"><a href="#page5">健身知识</a></span>
+        <span data-menuanchor="page6"><a href="#page6">联系我们</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <div id="dowebok">
+  	<!-- 第一屏 -->
+	<div class="section section1">
+		<!-- <p>Make Exercise Freer</p> -->
+	  <div id="container">
+	    <video id="background_video" loop muted></video>
+	    <div id="video_cover"></div>
+	    <div id="overlay"></div>
+
+	    <section id="main_content">
+	      <div id="head">
+	        <h1>让健身更自由</h1>
+	        <p class="sub_head">Make Exercise</p>
+	        <p class="info"> Freer</p>
+	      </div>
+	    </section>
+	  </div>
+
+	  <script src="js/bideo.js"></script>
+	  <script src="js/main.js"></script>
+
+	</div>
+	<!-- 第二屏 -->
+	<div class="section section2">
+		<div class="slide sections1">
+			<p style=" position: absolute; top: -120%;">sanpang健身俱乐部</p>
+			<span style=" position: absolute; bottom: -120%;">爱生命，爱生活，从健身房开始！</sapn>
+		</div>
+        <div class="slide sections2">
+        	<p style="color: #2a9e00;">生命在于运动！</p>
+			<span>生命在于历练！</span>
+        </div>
+        <div class="slide sections3">
+        	<p style="color: #2a9e00;">增强体质，健体强身</p> 
+			<span>有好的身体才有好的未来，美好一生。</span>
+		</div>
+	</div>
+	<!-- 第三屏 -->
+	<div class="section section3">
+		<div class="cont s--inactive"> 
+		  <!-- cont inner start -->
+		  <div class="cont__inner"> 
+		    <!-- el start -->
+		    <div class="el">
+		      <div class="el__overflow">
+		        <div class="el__inner" id="el_click1">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">有氧HIIT训练</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">有氧HIIT训练</div>
+		            <div class="el__close-btn"></div>
+		            <!-- 下箭头 -->
+		            <a class="cd-Croll btn1"></a>
+		            <!-- 内容 -->
+		            <div  class="box1"><p>HIIT是High-intensity Interval Training的缩写，意思是高强度间歇训练法，用来练习心肺功能，冲击速度，配合其他训练减脂效果明显，这种特殊的训练方法问世以来风靡欧美大陆。</p></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">健</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="健">健</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el">
+		      <div class="el__overflow">
+		        <div class="el__inner" id="el_click2">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">高强度训练</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">高强度训练</div>
+		            <div class="el__close-btn"></div>
+		            <!-- 下箭头 -->
+		            <a class="cd-Croll btn1"></a>
+		            <!-- 内容 -->
+		            <div  class="box1"><p>有氧运动是指人体在氧气充分供应的情况下进行的体育锻炼。即在运动过程中，人体吸入的氧气与需求相等，达到生理上的平衡状态。</p></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">身</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="身">身</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el">
+		      <div class="el__overflow">
+		        <div class="el__inner" id="el_click1">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">无氧器械训练</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">无氧器械训练</div>
+		            <div class="el__close-btn"></div>
+		            <!-- 下箭头 -->
+		            <a class="cd-Croll btn1"></a>
+		            <!-- 内容 -->
+		            <div  class="box1"><p>无氧运动是指肌肉在“缺氧”的状态下高速剧烈的运动。无氧运动大部分是负荷强度高、瞬间性强的运动，所以很难持续长时间，而且疲劳消除的时间也慢。</p></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">俱</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="俱">俱</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el">
+		      <div class="el__overflow">
+		        <div class="el__inner" id="el_click1">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">身体冲击格斗</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">身体冲击格斗</div>
+		            <div class="el__close-btn"></div>
+		            <!-- 下箭头 -->
+		            <a class="cd-Croll btn1"></a>
+		            <!-- 内容 -->
+		            <div  class="box1"><p>格斗(搏击)，格斗的意思即“打斗、战斗”。从古到今，人类发明了各种各样的格斗技，如今世界上有着许许多多不同的格斗技。而格斗有：徒手格斗(没用武器)和器械格斗(使用武器)。</p></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">乐</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="乐">乐</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el">
+		      <div class="el__overflow">
+		        <div class="el__inner" id="el_click1">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">热舞健身操</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">热舞健身操</div>
+		            <div class="el__close-btn"></div>
+		            <!-- 下箭头 -->
+		            <a class="cd-Croll btn1"></a>
+		            <!-- 内容 -->
+		            <div  class="box1"><p>该课种属心肺功能类课程，以健身操为模板，在之基础上加入多种元素，如：高冲击动作、拉丁、热舞、disco等等，编排中大大增加了课程的趣味性，使会员在轻松的氛围中完成最枯燥却最有效的训练。</p></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">部</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="部">部</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		  </div>
+		  <!-- cont inner end --> 
+		</div>
+		<script type="text/javascript">
+		  var $cont = document.querySelector('.cont');
+			var $elsArr = [].slice.call(document.querySelectorAll('.el'));
+			var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
+
+			setTimeout(function() {
+			  $cont.classList.remove('s--inactive');
+			}, 200);
+
+			$elsArr.forEach(function($el) {
+			  $el.addEventListener('click', function() {
+			    if (this.classList.contains('s--active')) return;
+			    $cont.classList.add('s--el-active');
+			    this.classList.add('s--active');
+			  });
+			});
+
+			$closeBtnsArr.forEach(function($btn) {
+			  $btn.addEventListener('click', function(e) {
+			    e.stopPropagation();
+			    $cont.classList.remove('s--el-active');
+			    document.querySelector('.el.s--active').classList.remove('s--active');
+			  });
+			});
+		</script>
+	</div>
+	<!-- 第四屏 -->
+	<div class="section section4">
+		<!--效果html开始-->
+		<section class="demo-3">
+			<h2 style="color: green;">教练团队</h2>
+			<div class="grid">
+				<div class="box">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+						<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+						<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+						<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+					</svg>
+					<img src="images/25.jpg">
+					<span>宋寒教练</span>
+					<span>专长：塑身美体训练、产后恢复训练、运动康复训练。</span>
+				</div>
+				<div class="box">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+						<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+						<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+						<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+					</svg>
+					<img src="images/24.jpg">
+					<span>韩成教练</span>
+					<span>韩成拳击教练  12岁开始了自己的拳击生涯。</span>
+				</div>
+				<div class="box">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+						<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+						<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+						<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+					</svg>
+					<img src="images/4.jpg">
+					<span>李毅涵教练</span>
+					<span>国家级运动健将，是知名的全国健身小姐、形体小姐、体育模特</span>
+				</div>
+			</div><!-- /grid -->
+		</section>
+		<!--效果html结束-->
+	</div>
+	<!-- 第五屏 -->
+	<div class="section section5">
+		<div class="mkeContentBox">
+			<!--效果html开始-->
+			<ul id="container_mouse" class="clearfix">
+				<li> <img class="img" src="images/15.jpg">
+				    <p> <span>如果有来生，我要做一棵树，站成永恒，没有悲欢的姿势。</span> <a target="_blank"  href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/16.jpg">
+				    <p> <span>一半在土里安详，一半在风里飞扬，一半洒落阴凉，一半沐浴阳光。</span> <a target="_blank"  href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/17.jpg">
+				    <p> <span>非常沉默非常骄傲，从不依靠从不寻找。</span> <a target="_blank"  href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/18.jpg">
+				    <p> <span>如果有来生，有没有人爱，我也要努力做一个可爱的人。</span> <a target="_blank"  href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/19.jpg">
+				    <p> <span>不埋怨谁，不嘲笑谁，也不羡慕谁，阳光下灿烂，风雨中奔跑，做自己的梦，走自己的路。</span> <a target="_blank"  href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/20.jpg">
+				    <p> <span>如果有来生——三毛</span> <a target="_blank" href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/21.jpg">
+				    <p> <span>如果有来生——三毛</span> <a target="_blank" href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/22.jpg">
+				    <p> <span>如果有来生——三毛</span> <a target="_blank" href="#"></a> <i></i> </p>
+				</li>
+				<li> <img class="img" src="images/23.jpg">
+				    <p> <span>如果有来生——三毛</span> <a target="_blank" href="#"></a> <i></i> </p>
+				</li>
+
+			</ul>
+			<script>
+			   $("#container_mouse li").each(function(){
+				   $(this).on('mouseenter',function(e){
+					   var e=e||window.event;
+					   var angle=direct(e,this)
+					   mouseEvent(angle,this,'in')
+				   })
+				   $(this).on('mouseleave',function(e){
+					   var e=e||window.event;
+					   var angle=direct(e,this)
+					   mouseEvent(angle,this,'off')
+				   })
+			   })
+			   function direct(e,o){
+				 var w=o.offsetWidth;
+				 var h=o.offsetHeight;
+				 var top= o.offsetTop;                    //包含滚动条滚动的部分
+				 var left= o.offsetLeft;
+				 var scrollTOP=document.body.scrollTop||document.documentElement.scrollTop;
+				 var scrollLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+				 var offTop=top-  scrollTOP;
+				 var offLeft= left- scrollLeft;
+				 //console.log(offTop+";"+offLeft)
+				// e.pageX|| e.clientX;
+						//pageX 是从页面0 0 点开始  clientX是当前可视区域0 0开始  即当有滚动条时clientX  小于  pageX
+					   //ie678不识别pageX
+					   //PageY=clientY+scrollTop-clientTop;(只讨论Y轴,X轴同理,下同) 页面上的位置=可视区域位置+页面滚动条切去高度-自身border高度
+				 var ex= (e.pageX-scrollLeft)|| e.clientX;
+				 var ey=(e.pageY-scrollTOP)|| e.clientY;
+				 var x=(ex-offLeft-w/2)*(w>h?(h/w):1);
+				 var y=(ey-offTop-h/2)*(h>w?(w/h):1);
+
+				 var angle=(Math.round((Math.atan2(y,x)*(180/Math.PI)+180)/90)+3)%4 //atan2返回的是弧度 atan2(y,x)
+				 var directName=["上","右","下","左"];
+				 return directName[angle];  //返回方向  0 1 2 3对应 上 右 下 左
+			   }
+			   function mouseEvent(angle,o,d){ //方向  元素  鼠标进入/离开
+				   var w=o.offsetWidth;
+				   var h=o.offsetHeight;
+
+				   if(d=='in'){
+					   switch(angle){
+						   case '上':
+							   $(o).find("p").css({left:0,top:-h+"px"}).stop(true).animate({left:0,top:0},300)
+								setTimeout(function(){
+									$(o).find("p a").css({left:'50%',top:-h+"px"}).stop(true).animate({left:'50%',top:'20px'},300)
+								},200)
+							   break;
+						   case '右':
+							   $(o).find("p").css({left:w+"px",top:0}).stop(true).animate({left:0,top:0},300)
+							   setTimeout(function(){
+								   $(o).find("p a").css({left:w+"px",top:'20px'}).stop(true).animate({left:'50%',top:'20px'},300)
+							   },200)
+							   break;
+						   case '下':
+							   $(o).find("p").css({left:0,top:h+"px"}).stop(true).animate({left:0,top:0},300)
+							   setTimeout(function(){
+								   $(o).find("p a").css({left:'50%',top:h+"px"}).stop(true).animate({left:'50%',top:'20px'},300)
+							   },200)
+							   break;
+						   case '左':
+							   $(o).find("p").css({left:-w+"px",top:0}).stop(true).animate({left:0,top:0},300)
+							   setTimeout(function(){
+								   $(o).find("p a").css({left:-w+"px",top:'20px'}).stop(true).animate({left:'50%',top:'20px'},300)
+							   },200)
+							   break;
+					   }
+				   }else if(d=='off'){
+					   switch(angle){
+						   case '上':
+							   $(o).find("p a").stop(true).animate({left:'50%',top:-h+"px"},300)
+							   setTimeout(function(){
+								   $(o).find("p").stop(true).animate({left:0,top:-h+"px"},300)
+							   },200)
+							   break;
+						   case '右':
+							   $(o).find("p a").stop(true).animate({left:w+"px",top:'20px'},300)
+							   setTimeout(function(){
+								   $(o).find("p").stop(true).animate({left:w+"px",top:0},300)
+							   },200)
+							   break;
+						   case '下':
+							   $(o).find("p a").stop(true).animate({left:'50%',top:h+"px"},300)
+							   setTimeout(function(){
+								   $(o).find("p").stop(true).animate({left:0,top:h+"px"},300)
+							   },200)
+							   break;
+						   case '左':
+							   $(o).find("p a").stop(true).animate({left:-w+"px",top:'20px'},300)
+							   setTimeout(function(){
+								   $(o).find("p").stop(true).animate({left:-w+"px",top:0},300)
+							   },200)
+							   break;
+					   }
+				   }
+			   }
+			</script>
+		<!--效果html结束-->
+		</div>
+	</div>
+	<!-- 第六屏 -->
+	<div class="section section6">
+		<!-- <h3>联系我们</h3> -->
+		<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=dDOKBdXFCG7TnyFvMScTlOmI"></script>
+		<div id="allmap"></div>
+		<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap");    // 创建Map实例
+		map.centerAndZoom(new BMap.Point(113.65,34.76), 11);  // 初始化地图,设置中心点坐标和地图级别
+		//添加地图类型控件
+		map.addControl(new BMap.MapTypeControl({
+			mapTypes:[
+	            BMAP_NORMAL_MAP,
+	            BMAP_HYBRID_MAP
+	        ]}));	  
+		map.setCurrentCity("郑州");          // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+		</script>-->
+		<section >
+		    <div class="contents-block contents-block-white contents-block-trial">
+		        <div class="contents-block-trial-subtitle">联系我们</div>
+		            <h2 class="contents-block-trial-title helvetica">TRIAL LESSON</h2>
+
+		            <div class="contents-block-trial-flow main_content_inner">
+		               <div class="contents-block-trial-flow-item" style="position: absolute; left: -120%">
+		                  <p class="contents-block-trial-flow-title helvetica">STEP1</p>
+		                  <div class="contents-block-trial-flow-icon">
+		                     <img src="images/icon_map.svg" alt="STEP1" class="icon_map">
+		                  </div>
+		                  <p class="contents-block-trial-flow-text">地图<br class="pc">门店<br>
+		                     <a href="/studio/">导航</a>
+		                  </p>
+		               </div>
+		               <div class="contents-block-trial-flow-arrow" style="position: absolute;left:-120%"></div>
+
+		               <div class="contents-block-trial-flow-item"  style="position: absolute; left: -120%">
+		                  <p class="contents-block-trial-flow-title helvetica">STEP2</p>
+		                  <div class="contents-block-trial-flow-icon">
+		                     <img src="images/icon_pc.svg" alt="STEP2" class="icon_pc">
+		                  </div>
+		                  <p class="contents-block-trial-flow-text">手机<br class="pc">邮箱<br>
+		                     <a href="" target="_blank">会員登録</a>
+		                  </p>
+
+		               </div>
+		               <div class="contents-block-trial-flow-arrow" style="position: absolute;left:-120%"></div>
+		                  <div class="contents-block-trial-flow-item"  style="position: absolute; left: -120%">
+		                     <p class="contents-block-trial-flow-title helvetica">STEP3</p>
+		                     <div class="contents-block-trial-flow-icon">
+		                        <img src="images/icon_building.svg" alt="STEP3" class="icon_building">
+		                     </div>
+		                     <p class="contents-block-trial-flow-text">
+		                           门店活动<br class="pc">优惠<br>开始
+		                     </p>
+
+		                  </div>
+		               </div>
+		            <div id="btns_util" style="position: absolute;bottom: -120%;left: 50%;transform: translateX(-50%);">
+		               <a href="" class="btn_util btn_util-square btn_util-chacl-alt dib ">もっと詳しく</a>
+		               <a href="" target="_blank" class="btn_util btn_util-square btn_util-chacl dib ">すぐに予約する</a>
+		           </div>
+		    </div>
+   		</section>
+	</div>
+</div>
+</body>
+</html>
